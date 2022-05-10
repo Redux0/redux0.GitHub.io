@@ -28,6 +28,8 @@
     <url>/2022/05/10/sql/13-57-45/</url>
     <content><![CDATA[<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="Level1"><a href="#Level1" class="headerlink" title="Level1"></a>Level1</h2><h3 id="Hello-SQL"><a href="#Hello-SQL" class="headerlink" title="Hello SQL"></a>Hello SQL</h3><p>Select ‘Hello SQL’ 会直接输出这个字符串。</p>
 <p>记得一个语句要以分号结尾。</p>
+<span id="more"></span>
+
 <h3 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT `column1`, `column2`</span><br><span class="line">FROM `table`;</span><br></pre></td></tr></table></figure>
 
 <p>反引号的作用是防止与sql关键字冲突。</p>
