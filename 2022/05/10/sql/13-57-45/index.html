@@ -197,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      undefined 字
+      2.7k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      NaN 分钟
+      23 分钟
     </span>
   
 
@@ -242,29 +242,29 @@
 <p>记得一个语句要以分号结尾。</p>
 <span id="more"></span>
 
-<h3 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT `column1`, `column2`</span><br><span class="line">FROM `table`;</span><br></pre></td></tr></table></figure>
+<h3 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs mysql">SELECT `column1`, `column2`<br>FROM `table`;<br></code></pre></td></tr></table></figure>
 
 <p>反引号的作用是防止与sql关键字冲突。</p>
 <p>会选中对应的列，并且将他们的值打印出来。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM `table`;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT * FROM `table`;<br></code></pre></td></tr></table></figure>
 
 <p>使用通配符*可以选中所有列。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT `column`</span><br><span class="line">FROM `table`</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT DISTINCT `column`<br>FROM `table`<br></code></pre></td></tr></table></figure>
 
 <p>使用<strong>DISTINCT</strong>关键字，可以保证所选column中的值不重复。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `column1`,`column2`…</span><br><span class="line">FROM `table_name`</span><br><span class="line">WHERE `column` operator `value`;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT `column1`,`column2`…<br>FROM `table_name`<br>WHERE `column` operator `value`;<br></code></pre></td></tr></table></figure>
 
 <p>使用<strong>WHERE</strong>子句，可以根据列中的值筛选过滤列。</p>
-<h3 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `table`</span><br><span class="line">VALUES (value1, value2, value3,...);</span><br></pre></td></tr></table></figure>
+<h3 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">INSERT INTO `table`<br>VALUES (value1, value2, value3,...);<br></code></pre></td></tr></table></figure>
 
 <p>不指定列插入，VALUES对应的是数据表中的每个属性，必须一一对应，否则会报错。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `table`</span><br><span class="line">(`column1`, `column2`, `column3`,...)</span><br><span class="line">VALUES (value1, value2, value3,...);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">INSERT INTO `table`<br>(`column1`, `column2`, `column3`,...)<br>VALUES (value1, value2, value3,...);<br></code></pre></td></tr></table></figure>
 
 <p>指定列插入，对于指定了的列，属性要一一对应。</p>
-<h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE `table`</span><br><span class="line">SET `column1`=value1,`column2`=value2,...</span><br><span class="line">WHERE `column` operator `value`;</span><br></pre></td></tr></table></figure>
+<h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">UPDATE `table`<br>SET `column1`=value1,`column2`=value2,...<br>WHERE `column` operator `value`;<br></code></pre></td></tr></table></figure>
 
 <p>更新表，设置属性为value。⚠没有where则一整列都会被更新。</p>
-<h3 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM `table`</span><br><span class="line">WHERE `column` operator `value`;</span><br></pre></td></tr></table></figure>
+<h3 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">DELETE FROM `table`<br>WHERE `column` operator `value`;<br></code></pre></td></tr></table></figure>
 
 <p>从表中删除，使用where来筛选。⚠没有where则会删除所有行。</p>
 <h3 id="小提醒"><a href="#小提醒" class="headerlink" title="小提醒"></a>小提醒</h3><ul>
@@ -274,24 +274,24 @@
 <li>Select的内容可以看作是返回一个表，可以对这个表进行其他处理，而不仅仅是选中内容。</li>
 </ul>
 <h2 id="Level2"><a href="#Level2" class="headerlink" title="Level2"></a>Level2</h2><h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>常用的比较运算符有 <code>=</code>（等于） 、<code>!=</code>（不等于）、 <code>&lt;&gt;</code>（不等于）、<code>&lt;</code>（小于）、<code>&lt;=</code>（小于等于）、<code>&gt;</code>（大于）、<code>&gt;=</code>（大于等于），其中 <code>!=</code> 和 <code>&lt;&gt;</code> 在特殊情况下用法是不同的，这里暂时不提。</p>
-<h3 id="And，Or，Not连接多条件"><a href="#And，Or，Not连接多条件" class="headerlink" title="And，Or，Not连接多条件"></a>And，Or，Not连接多条件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WHERE condition1 AND condition2;</span><br></pre></td></tr></table></figure>
+<h3 id="And，Or，Not连接多条件"><a href="#And，Or，Not连接多条件" class="headerlink" title="And，Or，Not连接多条件"></a>And，Or，Not连接多条件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">WHERE condition1 AND condition2;<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WHERE condition1 or condition2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">WHERE condition1 or condition2;<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WHERE NOT `condition`;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">WHERE NOT `condition`;<br></code></pre></td></tr></table></figure>
 
 <p>可以使用括号手动控制优先级。</p>
-<h3 id="In，Not-In，Between-And，Is-Null，Like"><a href="#In，Not-In，Between-And，Is-Null，Like" class="headerlink" title="In，Not In，Between And，Is Null，Like"></a>In，Not In，Between And，Is Null，Like</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM `table`</span><br><span class="line">WHERE `column` IN `value`;</span><br></pre></td></tr></table></figure>
+<h3 id="In，Not-In，Between-And，Is-Null，Like"><a href="#In，Not-In，Between-And，Is-Null，Like" class="headerlink" title="In，Not In，Between And，Is Null，Like"></a>In，Not In，Between And，Is Null，Like</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT *<br>FROM `table`<br>WHERE `column` IN `value`;<br></code></pre></td></tr></table></figure>
 
 <p>value的格式和Insert类似，有点像python的元组。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM `teachers`</span><br><span class="line">WHERE `country` IN (&#x27;CN&#x27;, &#x27;UK&#x27;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT *<br>FROM `teachers`<br>WHERE `country` IN (&#x27;CN&#x27;, &#x27;UK&#x27;);<br></code></pre></td></tr></table></figure>
 
 <p>示例代码如上。</p>
 <p>Not in则是表示不在数据组中，与python相仿。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM `table`</span><br><span class="line">WHERE `column` BETWEEN `value` AND `value`;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT *<br>FROM `table`<br>WHERE `column` BETWEEN `value` AND `value`;<br></code></pre></td></tr></table></figure>
 
 <p>Between and的实现根据数据库有所不同，区间的开闭不一定。MySQL, PostgreSQL是包含上下边界的。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM `table`</span><br><span class="line">WHERE `column` IS NULL;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT *<br>FROM `table`<br>WHERE `column` IS NULL;<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p><strong>注释</strong>：无法比较 NULL 和 0；它们是不等价的。</p>
@@ -300,7 +300,7 @@
 </blockquote>
 <p>Is null判断是否是Null值。⚠Null不是0，也不是空值，不可比较。</p>
 <p>Not col is null和col is not null效果相同。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM `table`</span><br><span class="line">WHERE `column` LIKE `value`;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT *<br>FROM `table`<br>WHERE `column` LIKE `value`;<br></code></pre></td></tr></table></figure>
 
 <p>value部分类似与正则表达式。例如：’D%’ 表示以 D 开头的所有单词。</p>
 <table>
@@ -328,34 +328,34 @@
 </tr>
 </tbody></table>
 <p>选择使用qq邮箱的所有老师，返回名字和邮箱：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT name, email FROM teachers</span><br><span class="line">WHERE email like &#x27;%@qq.com&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT name, email FROM teachers<br>WHERE email like &#x27;%@qq.com&#x27;<br></code></pre></td></tr></table></figure>
 
 <p>⚠记得like后的部分要打引号。</p>
 <h3 id="Order-By和Limit"><a href="#Order-By和Limit" class="headerlink" title="Order By和Limit"></a>Order By和Limit</h3><p>Order by用来对查询结果排序，可以以一个或多个列为关键字，默认按照升序排序。ASC表示升序，DESC表示降序。⚠注意是Ascend和Decrease，不要用错缩写了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `column_name`, `column_name`</span><br><span class="line">FROM `table_name`</span><br><span class="line">ORDER BY `column_name`, `column_name` ASC|DESC;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT `column_name`, `column_name`<br>FROM `table_name`<br>ORDER BY `column_name`, `column_name` ASC|DESC;<br></code></pre></td></tr></table></figure>
 
 <p>如果有多个列，则按照列给出的先后顺序进行排序。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ORDER BY `teacher_id` ASC, `created_at` DESC;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">ORDER BY `teacher_id` ASC, `created_at` DESC;<br></code></pre></td></tr></table></figure>
 
 <p>对于多个列，在每个列后面指定升序或降序即可，不指定则仍是默认升序。</p>
 <p>Limit用来对查询结果数量进行约束，接受两个关键字。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT `column`</span><br><span class="line">FROM `table`</span><br><span class="line">LIMIT `offset` , `count`;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT `column`<br>FROM `table`<br>LIMIT `offset` , `count`;<br></code></pre></td></tr></table></figure>
 
 <p>offset是起始偏移量，0代表第一条结果。</p>
 <p>count则是结果条数。</p>
 <p>⚠如果只有一个参数，则将其视为count，offset为0，如Limit 3代表返回前三条数据。</p>
-<h2 id="Level3"><a href="#Level3" class="headerlink" title="Level3"></a>Level3</h2><h3 id="Avg-，As，Max-，Min-，SUM"><a href="#Avg-，As，Max-，Min-，SUM" class="headerlink" title="Avg()，As，Max()，Min()，SUM()"></a>Avg()，As，Max()，Min()，SUM()</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT AVG(`column`) </span><br><span class="line">FROM `table`;</span><br></pre></td></tr></table></figure>
+<h2 id="Level3"><a href="#Level3" class="headerlink" title="Level3"></a>Level3</h2><h3 id="Avg-，As，Max-，Min-，SUM"><a href="#Avg-，As，Max-，Min-，SUM" class="headerlink" title="Avg()，As，Max()，Min()，SUM()"></a>Avg()，As，Max()，Min()，SUM()</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs msql">SELECT AVG(`column`) <br>FROM `table`;<br></code></pre></td></tr></table></figure>
 
 <p>返回的是column中数据的平均值。</p>
 <p>示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT AVG(`student_count`) AS `average_student_count`</span><br><span class="line">FROM `courses`;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT AVG(`student_count`) AS `average_student_count`<br>FROM `courses`;<br></code></pre></td></tr></table></figure>
 
 <p>AS的用处是在返回时显示别名，例如此处，结果的列将会显示为average_student_count。</p>
 <p>⚠这种情况下，AS要放在from前。而如果嵌套查询，可能会把其他表用AS重命名。</p>
 <p>其它用途包括给计算得到的新列赋予名字，修改返回列表的格式等等。</p>
 <p>Max()/Min()返回最大/最小值，</p>
 <p>Sum()返回一列的和。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT SUM(`column_name`) </span><br><span class="line">FROM `table_name`;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT SUM(`column_name`) <br>FROM `table_name`;<br></code></pre></td></tr></table></figure>
 
 <h3 id="Round-，Null-，Count"><a href="#Round-，Null-，Count" class="headerlink" title="Round()，Null()，Count()"></a>Round()，Null()，Count()</h3>
             </div>
