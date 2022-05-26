@@ -1,21 +1,25 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Andrew Yang">
-  <meta name="keywords" content="blog">
-  
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
     <meta property="og:type" content="website">
 <meta property="og:title" content="Redux的一生">
 <meta property="og:url" content="http://example.com/index.html">
@@ -23,355 +27,594 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Andrew Yang">
 <meta property="article:tag" content="blog">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Redux的一生</title>
   
-  
-  <title>Redux的一生</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
 
 
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
 
-<link  rel="stylesheet" href="/css/main.css" />
+  <div class="site-meta">
 
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.2"></head>
-
-
-<body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Redux SecretBase</strong>
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Redux的一生</h1>
+      <i class="logo-line"></i>
     </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
-          </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://api.r10086.com/img-api.php?type=P%E7%AB%99%E7%B3%BB%E5%88%971') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="阿斯泰利奥斯，你要记住，浓茶让人虚弱，淡茶让人强大。">
-              
-            </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/05/26/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6/23-01-01/" target="_self">
-          现代密码学
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022/05/26/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6/23-01-01/" target="_self">
-          
-          现代密码学概念  CIAN：机密性（加密算法）、完整性（杂凑）、认证、不可否认性（数字签名）。  对称密钥：ZUC、DES、AES、SM4（fo-&gt;fen）。  公钥密码：RSA、ECC、SM2（r-&gt;pub）、ElGamal。  公钥密码加密慢于3DES，ECC相对快。  流密码：ZUC、A5、SNOW、RC4。  杂凑函数：SHA-1、MD5、SM3（160、128、256）。
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-26 23:01" pubdate>
-              2022-05-26
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
+      <p class="site-subtitle" itemprop="description">Secret Base</p>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/05/10/testr/13-53-23/" target="_self">
-          testr
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022/05/10/testr/13-53-23/" target="_self">
-          
-          
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-10 13:53" pubdate>
-              2022-05-10
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/05/10/hello-world/13-45-57/" target="_self">
-          Hello World
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022/05/10/hello-world/13-45-57/" target="_self">
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-10 13:45" pubdate>
-              2022-05-10
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
-    
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Andrew Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
 
     
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/26/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6/23-01-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Andrew Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Redux的一生">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Redux的一生">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/26/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6/23-01-01/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-26 23:01:01" itemprop="dateCreated datePublished" datetime="2022-05-26T23:01:01+08:00">2022-05-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-27 00:32:31" itemprop="dateModified" datetime="2022-05-27T00:32:31+08:00">2022-05-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="现代密码学"><a href="#现代密码学" class="headerlink" title="现代密码学"></a>现代密码学</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li><p><input disabled="" type="checkbox">  CIAN：机密性（加密算法）、完整性（杂凑）、认证、不可否认性（数字签名）。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  对称密钥：ZUC、DES、AES、SM4（fo-&gt;fen）。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  公钥密码：RSA、ECC、SM2（r-&gt;pub）、ElGamal。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  公钥密码加密慢于3DES，ECC相对快。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  流密码：ZUC、A5、SNOW、RC4。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  杂凑函数：SHA-1、MD5、SM3（160、128、256）。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  杂凑用于完整性校验、摘要定长。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  Kerckhoff原则：安全性依赖于对密钥保密。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  唯密文攻击-&gt;已知明文攻击-&gt;选择明文攻击-&gt;选择密文攻击。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  唯密文：需知道明文类型，一般穷搜索，实际上不可行。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  已知明文：知道一些明文和对应密文。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  选择明文：精心选择一些明文，得到密文。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  选择密文：精心选择一些密文（除需解的），得到明文。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  无条件安全：无论截获多少密文，无法唯一确定明文。（一次一密）</p>
+</li>
+<li><p><input disabled="" type="checkbox">  计算上安全：使用有效资源无法破译密码系统。代价超过价值或时间超过期限。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  -1800古典密码-1949近代密码-76-94-20现代密码I、II、III。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  49香农发表保密系统的通信原理，提出扩散和混淆。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  76D&amp;F提出公钥密码概念。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  94Shor提出量子计算机分解大整数和求解离散对数多项式时间方法。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  保密系统要求：①实际上不可破②不依赖对算法保密③加密解密算法适用于密钥空间所有元素④便于实现和使用</p>
+</li>
+<li><p><input disabled="" type="checkbox">  Golomb伪随机公设：①T内0和1个数相差最多为1（01概率相同）②T内长为i的游程占总数1/2^i，且01游程一样多（每个位置上01概率相等）③异相自相关函数是一个常数（平移后的序列不给出其它信息）</p>
+</li>
+<li><p><input disabled="" type="checkbox">  分组密码主要工作模式：①电码本ECB（统计性质不好）②密码分组连接CBC（n-1和n正确可解n）③密码反馈CFB（rb影响自身和后续n/r天花板除组）④输出反馈OFB（rb只影响自己）⑤计数器模式（可生成伪随机序列）。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  分组密码设计：①分组够大（防止穷举明文）②密钥量够大（防止穷举密钥）③置换算法复杂（充分扩散、混淆）④加密解密简单（快）⑤一般无数据扩展（可引入）⑥差错传播尽可能小（一个密文分组错误影响尽量少）。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  Feistel：<br>$$<br>L_i=R_{i-1}\<br>R_i=L_{i-1}⊕F(R_{i-1},K_i)<br>$$</p>
+</li>
+<li><p><input disabled="" type="checkbox">  3DES（EDE）：加密E1D2E1，解密D1E2D1。安全，穷举2^112，差分10^52。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  Feistel网络加密解密过程一样，只是子密钥使用次序相反（正序-&gt;逆序）。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  SP混淆层和扩散层：<br>$$<br>S(K_i,X_{i-1})-&gt;P<br>$$</p>
+</li>
+<li><p><input disabled="" type="checkbox">  RSA中：①p、q应够大②p、q长度相近③p-1、q-1有大素因子④p-1、q-1公约数小。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  Hash安全条件：①单向性②抗弱碰撞③抗强碰撞。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  数字签名：①可信（任何人可验证）②不可伪造（除签名者难以伪造签名）③不可复制（一消息签名不能用于另一消息）④不可改变（已签名的信息不能篡改）⑤不可抵赖（签名者不可否认）。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  签名作用：身份认证、数据完整性、不可否认性</p>
+</li>
+<li><p><input disabled="" type="checkbox">  常见签名机制：RSA、ElGamal、DSS、Schnorr</p>
+</li>
+<li><p><input disabled="" type="checkbox">  RSA签名：s=m^d。验证：m=s^e。（私签公验）</p>
+</li>
+<li><p><input disabled="" type="checkbox">  朴素RSA签名缺陷①任何人可伪造x=y^e？②x1x2的签名为s1s2（乘法同态）③速度慢</p>
+</li>
+<li><p><input disabled="" type="checkbox">  朴素RSA签名改进：先Hash再对摘要签名，验证时先Hash再验证。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  ECC：椭圆曲线上离散对数计算困难。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  D-F：A发送g^x为Ya，B发送g^y为Yb；A计算Yb^x，B计算Ya^x；共享密钥g^xy。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  D-F中间人攻击：A与C共享g^xz，B与C共享g^yz。C是中间人。</p>
+</li>
+</ul>
+<h2 id="关键算法"><a href="#关键算法" class="headerlink" title="关键算法"></a>关键算法</h2><h3 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h3><p>Feistel网络。64(64)-&gt;64</p>
+<p><strong>IP</strong>-&gt;<strong>16x</strong> F：(32)<strong>E</strong>(48)-&gt;(48)<strong>异或</strong>(48)-&gt;(48)<strong>S</strong>(32)-&gt;(32)<strong>P</strong>(32)-&gt;<strong>左右交换</strong>-&gt;<strong>IP-1</strong>。</p>
+<p>S盒是DES唯一非线性元素。</p>
+<h3 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h3><p>SP(代换-置换)。128(128/192/256)-&gt;128</p>
+<p><strong>轮⊕</strong>-&gt;<strong>10/12/14x</strong> <strong>字节代换</strong>-&gt;<strong>行移位</strong>-&gt;<strong>列混淆</strong>-&gt;<strong>轮密钥⊕</strong>。</p>
+<p>最后一轮无列混淆。</p>
+<h3 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h3><p>确定性算法。</p>
+<p>1.共模攻击，加密同一个m：拓展gcd找到re1+se2=1，<br>$$<br>c_1=m^{e_1},c_2=m^{e_2}<br>=&gt;(c_1)^r(c_2)^s=m^{re_1+se_2}=m(mod n)<br>$$<br>2.低指数攻击：分解出pq或者中国剩余定理求出m^3(mod n1n2n3)。</p>
+<p>3.选择密文攻击：欲解c1的m1，选择m，构造c2=c1m^e，然后丢给解密器m2=m1m^-1。（其实就是乘一个m^e，乘同态）</p>
+<h3 id="ElGamal"><a href="#ElGamal" class="headerlink" title="ElGamal"></a>ElGamal</h3><p>有限域上离散对数困难问题。概率性算法，每次K要保密且不同。</p>
+<p>1.泄露k：求y^k，得到M=C2/y^k。</p>
+<p>2.两次同k，知M得M’：C2/C2’=M2/M2’。</p>
+<p>3.选择密文攻击：欲解(C1,C2)的M，将(C1,mC2)丢给解密器，得到M=M’/m。</p>
+<h3 id="ECC"><a href="#ECC" class="headerlink" title="ECC"></a>ECC</h3><p>椭圆曲线数学困难问题：Q=kP，P属于E，P的阶为大素数。已知k、P易求Q；已知P、Q难求k。</p>
+<p>$$<br>\begin{gathered}<br>x_{3}=\lambda^{2}-x_{1}-x_{2} \<br>y_{3}=\lambda\left(x_{1}-x_{3}\right)-y_{1}<br>\end{gathered}<br>$$</p>
+<p>$$<br>\lambda=\left{\begin{array}{l}<br>\frac{y_{2}-y_{1}}{x_{2}-x_{1}}, P \neq Q \text { 两点的直线 }\<br>\frac{3 x_{1}^{2}+a}{2 y_{1}}, P=Q\text { 也就是导数 }<br>\end{array} \quad\right.<br>$$</p>
+<h3 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h3><h3 id="Shamir"><a href="#Shamir" class="headerlink" title="Shamir"></a>Shamir</h3><p>h(x)、(n,k)（小的是门限）、p。n为总份数、k为门限。多项式为k-1次。h(0)即是秘密。</p>
+<h2 id="常见算法参数"><a href="#常见算法参数" class="headerlink" title="常见算法参数"></a>常见算法参数</h2><table>
+<thead>
+<tr>
+<th align="center">密码种类</th>
+<th align="center">初始密钥长</th>
+<th align="center">分组长度</th>
+<th align="center">输入长</th>
+<th align="center">输出长</th>
+<th align="center">轮数</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ZUC(祖冲之)</td>
+<td align="center">128</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td>序列密码</td>
+</tr>
+<tr>
+<td align="center">DES</td>
+<td align="center">64(56+8)</td>
+<td align="center">64</td>
+<td align="center">/</td>
+<td align="center">64</td>
+<td align="center">16</td>
+<td>不安全</td>
+</tr>
+<tr>
+<td align="center">3DES</td>
+<td align="center"><strong>128</strong>(2*(56+8))</td>
+<td align="center"></td>
+<td align="center">/</td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">AES</td>
+<td align="center">128/192/256</td>
+<td align="center">128(Nb=4)</td>
+<td align="center">/</td>
+<td align="center"></td>
+<td align="center">10/12/14</td>
+<td>GF(2^8)域下</td>
+</tr>
+<tr>
+<td align="center">SM4(第一个商密)</td>
+<td align="center"><strong>128有效</strong></td>
+<td align="center"><strong>128</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">加密、扩展<strong>32</strong></td>
+<td>对称密码，s盒比AES多仿射。无限局域网</td>
+</tr>
+<tr>
+<td align="center">SHA-1</td>
+<td align="center"><strong>160</strong></td>
+<td align="center">512</td>
+<td align="center">&lt;2^64</td>
+<td align="center"><strong>160</strong></td>
+<td align="center">4(80)</td>
+<td>大端法，填充到512倍数</td>
+</tr>
+<tr>
+<td align="center">SM3</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">&lt;2^64</td>
+<td align="center"><strong>256</strong></td>
+<td align="center">2(64)?</td>
+<td>填充到512的N倍2^128安全</td>
+</tr>
+<tr>
+<td align="center">SM2</td>
+<td align="center">特征<strong>160</strong>素数&gt;=192 SEED</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td>ECC</td>
+</tr>
+</tbody></table>
+<p>生日悖论</p>
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th>23</th>
+<th>30</th>
+<th>40</th>
+<th>50</th>
+<th>60</th>
+<th>100</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>P</td>
+<td>50.7%</td>
+<td>70.6%</td>
+<td>89.1%</td>
+<td>97.0%</td>
+<td>99.4%</td>
+<td>1-3.07x10-7</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/10/testr/13-53-23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Andrew Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Redux的一生">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Redux的一生">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/10/testr/13-53-23/" class="post-title-link" itemprop="url">testr</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-10 13:53:23" itemprop="dateCreated datePublished" datetime="2022-05-10T13:53:23+08:00">2022-05-10</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/10/hello-world/13-45-57/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Andrew Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Redux的一生">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Redux的一生">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/10/hello-world/13-45-57/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-10 13:45:57" itemprop="dateCreated datePublished" datetime="2022-05-10T13:45:57+08:00">2022-05-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：1985-10-26 16:15:00" itemprop="dateModified" datetime="1985-10-26T16:15:00+08:00">1985-10-26</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+</div>
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Andrew Yang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
-  
+
+    </div>
+  </footer>
 
   
-
-  
-</footer>
-
-
-  <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -379,36 +622,10 @@
 
 
 
+  
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
 
 
 </body>
