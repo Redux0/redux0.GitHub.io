@@ -16,19 +16,21 @@
   <meta name="author" content="Andrew Yang">
   <meta name="keywords" content="blog">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="testr">
-<meta property="og:url" content="http://example.com/2022/05/10/testr/13-53-23/index.html">
+    <meta name="description" content="现代密码学概念  CIAN：机密性（加密算法）、完整性（杂凑）、认证、不可否认性（数字签名）。  对称密钥：ZUC、DES、AES、SM4（fo-&gt;fen）。  公钥密码：RSA、ECC、SM2（r-&gt;pub）、ElGamal。  公钥密码加密慢于3DES，ECC相对快。  流密码：ZUC、A5、SNOW、RC4。  杂凑函数：SHA-1、MD5、SM3（160、128、256）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="现代密码学">
+<meta property="og:url" content="http://example.com/2022/05/26/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6/23-01-01/index.html">
 <meta property="og:site_name" content="Redux的一生">
+<meta property="og:description" content="现代密码学概念  CIAN：机密性（加密算法）、完整性（杂凑）、认证、不可否认性（数字签名）。  对称密钥：ZUC、DES、AES、SM4（fo-&gt;fen）。  公钥密码：RSA、ECC、SM2（r-&gt;pub）、ElGamal。  公钥密码加密慢于3DES，ECC相对快。  流密码：ZUC、A5、SNOW、RC4。  杂凑函数：SHA-1、MD5、SM3（160、128、256）。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-10T05:53:23.000Z">
-<meta property="article:modified_time" content="2022-05-10T05:53:23.919Z">
+<meta property="article:published_time" content="2022-05-26T15:01:01.000Z">
+<meta property="article:modified_time" content="2022-05-26T15:01:22.784Z">
 <meta property="article:author" content="Andrew Yang">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>testr - Redux的一生</title>
+  <title>现代密码学 - Redux的一生</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -174,7 +176,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="testr">
+            <span class="h2" id="subtitle" title="现代密码学">
               
             </span>
 
@@ -184,8 +186,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-10 13:53" pubdate>
-        2022年5月10日 下午
+      <time datetime="2022-05-26 23:01" pubdate>
+        2022年5月26日 晚上
       </time>
     </span>
   
@@ -195,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      1.5k 字
     </span>
   
 
@@ -204,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      13 分钟
     </span>
   
 
@@ -233,10 +235,154 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">testr</h1>
+            <h1 style="display: none">现代密码学</h1>
             
             <div class="markdown-body">
-              
+              <h1 id="现代密码学"><a href="#现代密码学" class="headerlink" title="现代密码学"></a>现代密码学</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li><input disabled="" type="checkbox"> CIAN：机密性（加密算法）、完整性（杂凑）、认证、不可否认性（数字签名）。</li>
+<li><input disabled="" type="checkbox"> 对称密钥：ZUC、DES、AES、SM4（fo-&gt;fen）。</li>
+<li><input disabled="" type="checkbox"> 公钥密码：RSA、ECC、SM2（r-&gt;pub）、ElGamal。</li>
+<li><input disabled="" type="checkbox"> 公钥密码加密慢于3DES，ECC相对快。</li>
+<li><input disabled="" type="checkbox"> 流密码：ZUC、A5、SNOW、RC4。</li>
+<li><input disabled="" type="checkbox"> 杂凑函数：SHA-1、MD5、SM3（160、128、256）。</li>
+<li><input disabled="" type="checkbox"> 杂凑用于完整性校验、摘要定长。</li>
+<li><input disabled="" type="checkbox"> Kerckhoff原则：安全性依赖于对密钥保密。</li>
+<li><input disabled="" type="checkbox"> 唯密文攻击-&gt;已知明文攻击-&gt;选择明文攻击-&gt;选择密文攻击。</li>
+<li><input disabled="" type="checkbox"> 唯密文：需知道明文类型，一般穷搜索，实际上不可行。</li>
+<li><input disabled="" type="checkbox"> 已知明文：知道一些明文和对应密文。</li>
+<li><input disabled="" type="checkbox"> 选择明文：精心选择一些明文，得到密文。</li>
+<li><input disabled="" type="checkbox"> 选择密文：精心选择一些密文（除需解的），得到明文。</li>
+<li><input disabled="" type="checkbox"> 无条件安全：无论截获多少密文，无法唯一确定明文。（一次一密）</li>
+<li><input disabled="" type="checkbox"> 计算上安全：使用有效资源无法破译密码系统。代价超过价值或时间超过期限。</li>
+<li><input disabled="" type="checkbox"> -1800古典密码-1949近代密码-76-94-20现代密码I、II、III。</li>
+<li><input disabled="" type="checkbox"> 49香农发表保密系统的通信原理，提出扩散和混淆。</li>
+<li><input disabled="" type="checkbox"> 76D&amp;F提出公钥密码概念。</li>
+<li><input disabled="" type="checkbox"> 94Shor提出量子计算机分解大整数和求解离散对数多项式时间方法。</li>
+<li><input disabled="" type="checkbox"> 保密系统要求：①实际上不可破②不依赖对算法保密③加密解密算法适用于密钥空间所有元素④便于实现和使用</li>
+<li><input disabled="" type="checkbox"> Golomb伪随机公设①T内0和1个数相差最多为1（01概率相同）②T内长为i的游程占总数1/2^i，且01游程一样多（每个位置上01概率相等）③异相自相关函数是一个常数（平移后的序列不给出其它信息）</li>
+<li><input disabled="" type="checkbox"> </li>
+</ul>
+<h2 id="关键算法"><a href="#关键算法" class="headerlink" title="关键算法"></a>关键算法</h2><h3 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h3><p>Feistel</p>
+<h3 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h3><p>SP(代换-置换)</p>
+<h3 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h3><p>确定性算法。</p>
+<p>1.共模攻击，加密同一个m：拓展gcd找到re1+se2=1，<br>$$<br>c_1=m^{e_1},c_2=m^{e_2}<br>=&gt;(c_1)^r(c_2)^s=m^{re_1+se_2}=m(mod n)<br>$$<br>2.低指数攻击：分解出pq或者中国剩余定理求出m^3(mod n1n2n3)。</p>
+<p>3.选择密文攻击：欲解c1的m1，选择m，构造c2=c1m^e，然后丢给解密器m2=m1m^-1。（其实就是乘一个m^e，乘同态）</p>
+<h3 id="ElGamal"><a href="#ElGamal" class="headerlink" title="ElGamal"></a>ElGamal</h3><p>有限域上离散对数困难问题。概率性算法，每次K要保密且不同。</p>
+<p>1.泄露k：求y^k，得到M=C2/y^k。</p>
+<p>2.两次同k，知M得M’：C2/C2’=M2/M2’。</p>
+<p>3.选择密文攻击：欲解(C1,C2)的M，将(C1,mC2)丢给解密器，得到M=M’/m。</p>
+<h3 id="ECC"><a href="#ECC" class="headerlink" title="ECC"></a>ECC</h3><p>椭圆曲线数学困难问题：Q=kP，P属于E，P的阶为大素数。已知k、P易求Q；已知P、Q难求k。</p>
+<p>这里放图Ep，P+Q</p>
+<h3 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h3><h3 id="Shamir"><a href="#Shamir" class="headerlink" title="Shamir"></a>Shamir</h3><p>h(x)、(n,k)（小的是门限）、p。n为总份数、k为门限。多项式为k-1次。h(0)即是秘密。</p>
+<h2 id="常见算法参数"><a href="#常见算法参数" class="headerlink" title="常见算法参数"></a>常见算法参数</h2><table>
+<thead>
+<tr>
+<th align="center">密码种类</th>
+<th align="center">初始密钥长</th>
+<th align="center">分组长度</th>
+<th align="center">输入长</th>
+<th align="center">输出长</th>
+<th align="center">轮数</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ZUC(祖冲之)</td>
+<td align="center">128</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td>序列密码</td>
+</tr>
+<tr>
+<td align="center">DES</td>
+<td align="center">64(56+8)</td>
+<td align="center">64</td>
+<td align="center">/</td>
+<td align="center">64</td>
+<td align="center">16</td>
+<td>不安全</td>
+</tr>
+<tr>
+<td align="center">3DES</td>
+<td align="center"><strong>128</strong>(2*(56+8))</td>
+<td align="center"></td>
+<td align="center">/</td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">AES</td>
+<td align="center">128/192/256</td>
+<td align="center">128(Nb=4)</td>
+<td align="center">/</td>
+<td align="center"></td>
+<td align="center">10/12/14</td>
+<td>GF(2^8)域下</td>
+</tr>
+<tr>
+<td align="center">SM4(第一个商密)</td>
+<td align="center"><strong>128有效</strong></td>
+<td align="center"><strong>128</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">加密、扩展<strong>32</strong></td>
+<td>对称密码，s盒比AES多仿射。无限局域网</td>
+</tr>
+<tr>
+<td align="center">SHA-1</td>
+<td align="center"><strong>160</strong></td>
+<td align="center">512</td>
+<td align="center">&lt;2^64</td>
+<td align="center"><strong>160</strong></td>
+<td align="center">4(80)</td>
+<td>大端法，填充到512倍数</td>
+</tr>
+<tr>
+<td align="center">SM3</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">&lt;2^64</td>
+<td align="center"><strong>256</strong></td>
+<td align="center">2(64)?</td>
+<td>填充到512的N倍2^128安全</td>
+</tr>
+<tr>
+<td align="center">SM2</td>
+<td align="center">特征<strong>160</strong>素数&gt;=192 SEED</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td>ECC</td>
+</tr>
+</tbody></table>
+<p>生日悖论</p>
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th>23</th>
+<th>30</th>
+<th>40</th>
+<th>50</th>
+<th>60</th>
+<th>100</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>P</td>
+<td>50.7%</td>
+<td>70.6%</td>
+<td>89.1%</td>
+<td>97.0%</td>
+<td>99.4%</td>
+<td>1-3.07x10-7</td>
+</tr>
+</tbody></table>
+
             </div>
             <hr>
             <div>
@@ -256,18 +402,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/26/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6/23-01-01/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">现代密码学</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/10/hello-world/13-45-57/">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2022/05/10/testr/13-53-23/">
+                        <span class="hidden-mobile">testr</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
